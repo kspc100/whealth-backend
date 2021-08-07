@@ -1,10 +1,16 @@
 import dotenv from "dotenv"
 dotenv.config()
 import app from './app.js';
+import { initializeDatabase } from "./database/db_init.js";
 import bloodPressureRouter from "./routes/blood_pressure_route.js";
+
+app.get("/test", (req, res) => res.send(`Test success: wHealth backend server listening on port ${port}`));
 
 // To reset the database, run the init() method:
 // Ama.init();
+app.post("/resetDatabase", (req, res, next) => {
+    initializeDatabase()
+})
 
 // Routes
 app.use("/bloodPressure", bloodPressureRouter);
