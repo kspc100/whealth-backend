@@ -1,4 +1,4 @@
-import getPool from "./database/db_init.js";
+import getPool from "../database/db_init.js";
 const pool = getPool();
 
 export function query(query, params) {

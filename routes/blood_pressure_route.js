@@ -1,6 +1,6 @@
 import express from "express";
 const bloodPressureRouter = express.Router();
-import bloodPressureDatabase from "./database/db_blood_pressure.js";
+import * as bloodPressureDatabase from "../database/db_blood_pressure.js";
 
 // POST /bloodPressure
 bloodPressureRouter.post('/', async (req, res, next) => {
