@@ -3,6 +3,7 @@ dotenv.config()
 import app from './app.js';
 import { initializeDatabase } from "./database/db_init.js";
 import bloodPressureRouter from "./routes/blood_pressure_route.js";
+import historyRouter from "./routes/history_route.js";
 
 app.get("/test", (req, res) => res.send(`Test success: wHealth backend server listening on port ${port}`));
 
@@ -14,6 +15,7 @@ app.post("/resetDatabase", (req, res, next) => {
 
 // Routes
 app.use("/bloodPressure", bloodPressureRouter);
+app.use("/history", historyRouter)
 
 // 404 Error Handler
 app.use((req, res, next) => {
