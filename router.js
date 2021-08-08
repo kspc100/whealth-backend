@@ -6,10 +6,10 @@ import bloodPressureRouter from "./routes/blood_pressure_route.js";
 
 app.get("/test", (req, res) => res.send(`Test success: wHealth backend server listening on port ${port}`));
 
-// To reset the database, run the init() method:
-// Ama.init();
 app.post("/resetDatabase", (req, res, next) => {
     initializeDatabase()
+        .then(() => res.sendStatus(201))
+        .catch(next)
 })
 
 // Routes
