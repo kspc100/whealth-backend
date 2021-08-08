@@ -7,7 +7,7 @@ const databaseConfig = {
 
 let pool;
 export default function getPool() {
-    if (!pool) pool = new Pool(databaseConfig);
+    if (!pool) pool = new pg.Pool(databaseConfig);
     return pool;
 }
 
