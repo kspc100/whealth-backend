@@ -8,7 +8,7 @@ app.get("/test", (req, res) => res.send(`Test success: wHealth backend server li
 
 app.post("/resetDatabase", (req, res, next) => {
     initializeDatabase()
-        .then(() => res.sendStatus(201))
+        .then(() => res.send(`Database Successfully reset`))
         .catch(next)
 })
 
