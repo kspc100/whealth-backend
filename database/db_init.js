@@ -2,14 +2,12 @@ import pg from "pg";
 
 const databaseConfig = {
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false,
-    },
+    ssl: process.env.NODE_ENV !== 'production' ? false : { rejectUnauthorized: false },
 }
 
 let pool;
 export default function getPool() {
-    if (!pool) pool = new pg.Pool(databaseConfig);
+    if (!pool) pool = new Pool(databaseConfig);
     return pool;
 }
 
