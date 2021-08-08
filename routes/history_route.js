@@ -9,4 +9,11 @@ historyRouter.delete('/bloodPressure', (req, res, next) => {
         .catch(next)
 })
 
+// delete /history/bloodPressure
+historyRouter.delete('/calories', (req, res, next) => {
+    return historyDatabase.clearCalories()
+        .then(() => res.sendStatus(204))
+        .catch(next)
+})
+
 export default historyRouter;

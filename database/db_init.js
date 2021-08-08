@@ -33,7 +33,9 @@ export function initializeDatabase() {
 
         DROP TABLE IF EXISTS calories_tab;
         CREATE TABLE calories_tab (
-            calories_id SERIAL
+            calories_id SERIAL,
+            food varchar(255) not null,
+            calories int not null
         );
     `)
 }

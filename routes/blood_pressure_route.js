@@ -18,8 +18,3 @@ bloodPressureRouter.get('/', (req, res, next) => {
 })
     
 export default bloodPressureRouter;
-
-// return queueManager
-    //     .enqueue()
-    //     .then((response) => res.status(201).json(response))
-    //     .catch(next)
