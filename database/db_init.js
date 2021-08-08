@@ -19,7 +19,7 @@ export function initializeDatabase() {
             systolic int not null,
             diastolic int not null,
             pulse int not null,
-            category varchar(25) not null,
+            category varchar(25) not null
         );
 
         DROP TABLE IF EXISTS medicine_tab;
