@@ -4,8 +4,8 @@ import * as bloodPressureDatabase from "../database/db_blood_pressure.js";
 
 // POST /bloodPressure
 bloodPressureRouter.post('/', (req, res, next) => {
-    const { sys, dia, pul } = req.body;
-    return bloodPressureDatabase.insertBloodPressure(sys, dia, pul)
+    const { sys, dia, pul, category } = req.body;
+    return bloodPressureDatabase.insertBloodPressure(sys, dia, pul, category)
         .then((result) => res.status(201).json(result))
         .catch(next)
 })
